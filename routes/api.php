@@ -9,4 +9,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Payments')->prefix('payments/mobile')->group(function() {
 	Route::post('token', 'MpesaController@generateAccessToken')->name('mpesa.token');
+	Route::post('stk/push', 'MpesaController@customerMpesaSTKPush')->name('mpesa.stk_push');
 });
